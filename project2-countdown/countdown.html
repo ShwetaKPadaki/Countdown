@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>indexJavaScript.html</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="countdown.css">  
+         </head> 
+
+<body>
+
+    <div class ="countdown">
+        <h1 >Countdown Timer</h1>
+        <p id="DisplayCountdown"></p>
+    </div>
+
+        <script type="text/javascript" src="jquery-3.6.3.js"></script>
+      
+        <script type="text/javascript" >
+             $( document ).ready(function() {  
+    var dest = new Date("2023-01-26").getTime(); //To get the total time till 2023 in milli secs since 1970 until 2023
+    var x = setInterval(function(){
+    var curr = new Date().getTime();  //To get the total time till now since 1970
+    var diff = dest - curr;
+    console.log(diff);
+
+    var days = Math.floor(diff/(1000 * 60 * 60 * 24));
+    console.log(days);
+    var hours = Math.floor((diff %(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+    console.log(hours);
+    var mins = Math.floor((diff %(1000 * 60 * 60 * 24))/(1000 * 60 ));
+    console.log(mins);
+    var secs = Math.floor((diff %(1000 * 60 * 60 * 24))/(1000));
+    console.log(secs);
+
+document.getElementById("DisplayCountdown").innerHTML = "Days:" +days+  "      Hours:" +hours+ "      Mins:" +mins+ "      Secs:" +secs
+    $('#Display Countdown').html( "Days:" +days+ "Hours:" +hours+ "Mins:" +mins+ "Secs:" +secs ) ;
+             }, 1000);
+            });
+        </script>
+       
+           
+   
+</body>
+</html>
+   
